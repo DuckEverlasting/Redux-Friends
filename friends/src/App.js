@@ -3,13 +3,13 @@ import { Route } from 'react-router-dom'
 import './App.css';
 import Login from './components/Login'
 import FriendList from './components/FriendList';
-import LandingPage from './components/LandingPage';
+import TopBar from './components/TopBar';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
+      <TopBar />
       <Route path="/login" component={Login} />
       <PrivateRoute exact path="/protected" component={FriendList} />
     </div>

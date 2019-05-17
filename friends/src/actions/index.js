@@ -25,13 +25,13 @@ export const login = input => dispatch => {
 export const getFriends = () => dispatch => {
   dispatch({ type: FETCH_START });
   axiosWithAuth()
-    .get('http://localhost:5000/friends')
+    .get('http://localhost:5000/api/friends')
     .then(res => {
-      console.log(res)
-      dispatch({ type: FETCH_SUCCESS, payload: res.data.payload });
+      console.log("RESULT", res)
+      dispatch({ type: FETCH_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      console.log(err)
+      console.log("ERROR", err)
       dispatch({ type: FETCH_FAILURE, payload: err });
     });
 };

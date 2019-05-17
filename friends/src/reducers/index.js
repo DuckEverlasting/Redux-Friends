@@ -33,6 +33,7 @@ const rootReducer = (state = initialState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
+        friends: action.payload
       };
     case FETCH_FAILURE:
       return {
